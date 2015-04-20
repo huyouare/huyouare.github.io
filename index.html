@@ -1,7 +1,116 @@
-<html>
-<div style="text-align:center">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>keyCode example</title>
+        <script type="text/javascript">
+        function showKeyCode(e) {
+            var letter = e.keyCode;
+            console.log(e.keyCode);
+            if (letter == 65 || letter == 97)
+            {
+                var audio = new Audio("a5.wav");
+                audio.play();
+            }
+            if (letter == 66 || letter == 98)
+            {
+                var audio = new Audio("b5.wav");
+                audio.play();
+            }
+            if (letter == 67 || letter == 99)
+            {
+                var audio = new Audio("c6.wav");
+                audio.play();
+            }
+            if (letter == 68 || letter == 100)
+            {
+                var audio = new Audio("d6.wav");
+                audio.play();
+            }
+            if (letter == 69 || letter == 101)
+            {
+                var audio = new Audio("e6.wav");
+                audio.play();
+            }
+            if (letter == 70 || letter == 102)
+            {
+                var audio = new Audio("f6.wav");
+                audio.play();
+            }
+            if (letter == 71 || letter == 103)
+            {
+                var audio = new Audio("g6.wav");
+                audio.play();
+            }
+            if (letter == 46 || letter == 0 || letter == 49) 
+            {
+                audio.pause();
+            }
+        }
 
-  <h1 style="color:red">KIND OF</h1>
-<!--   <h1>AT <img src="mainLogoUpdated.png" alt="LAHacks" height="100px" width="100px" /></h1> -->
-</div>
+        function playKey(letter) {
+          console.log("here: " + letter);
+          var div = document.getElementById('out');
+
+          div.innerHTML = div.innerHTML + String.fromCharCode(letter);
+          if (letter == 65 || letter == 97)
+          {
+              console.log("aaa");
+              var audio = new Audio("a5.wav");
+              audio.play();
+          }
+          if (letter == 66 || letter == 98)
+          {
+              var audio = new Audio("b5.wav");
+              audio.play();
+          }
+          if (letter == 67 || letter == 99)
+          {
+              var audio = new Audio("c6.wav");
+              audio.play();
+          }
+          if (letter == 68 || letter == 100)
+          {
+              var audio = new Audio("d6.wav");
+              audio.play();
+          }
+          if (letter == 69 || letter == 101)
+          {
+              var audio = new Audio("e6.wav");
+              audio.play();
+          }
+          if (letter == 70 || letter == 102)
+          {
+              var audio = new Audio("f6.wav");
+              audio.play();
+          }
+          if (letter == 71 || letter == 103)
+          {
+              var audio = new Audio("g6.wav");
+              audio.play();
+          }
+          if (letter == 46 || letter == 0 || letter == 49) 
+          {
+              audio.pause();
+          }
+        }
+
+        function playText() {
+          var x = document.getElementById("textArea");
+          console.log(x.value);
+          var text = x.value;
+          for (var i = 0; i < text.length; i++) {
+            console.log(i);
+            var c = text.charCodeAt(i);
+            console.log(c);
+            setTimeout(playKey, 100 * i, c);
+          }
+        }
+
+        </script>
+    </head>
+    <body>
+        <textarea type="text" id="textArea" rows="5" cols="120" onkeydown="showKeyCode(event);" ></textarea>
+        <button onclick="playText()">Play</button>
+        <div id="out"></div>
+    </body>
 </html>
